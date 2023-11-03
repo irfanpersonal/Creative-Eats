@@ -10,7 +10,7 @@ customFetch.interceptors.request.use((request) => {
         request.headers['authorization'] = `Bearer ${user.token}`;
     }
     return request;
-})
+});
 
 export default customFetch;
 

@@ -26,7 +26,6 @@ const Recipe = () => {
     const data = useLoaderData();
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    console.log(data);
     const {name, instructions, ingredients, description, foodImage, _id: id, createdAt, createdBy} = data;
     const fixedPublishTime = moment(createdAt).format('MMMM Do YYYY, h:mm:ss a');
     const {user} = useSelector(store => store.user);

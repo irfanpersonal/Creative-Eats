@@ -1,5 +1,7 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import customFetch from '../../utils';
+import {logoutUser} from '../user/userSlice';
+import {resetEditRecipeValues} from '../addRecipe/addRecipeSlice';
 
 export const getAllRecipes = createAsyncThunk('allRecipes/getAllRecipes', async(_, thunkAPI) => {
     try {
@@ -21,6 +23,10 @@ export const deleteSingleRecipe = createAsyncThunk('allRecipes/deleteSingleRecip
         return data.recipe;
     }
     catch(error) {
+        if (error.response.status === 401) {
+            thunkAPI.dispatch(logoutUser());
+            thunkAPI.dispatch(resetEditRecipeValues());
+        }
         return thunkAPI.rejectWithValue(error.response.data.msg);
     }
 });

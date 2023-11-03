@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import {NavLink, useNavigate} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import {logoutUser} from '../features/user/userSlice.js';
+import {resetEditRecipeValues} from '../features/addRecipe/addRecipeSlice.js';
 
 const Navbar = () => {
     const dispatch = useDispatch();
@@ -18,6 +19,7 @@ const Navbar = () => {
                         <NavLink to='/profile'>Profile</NavLink>
                         <span onClick={() => {
                             dispatch(logoutUser());
+                            dispatch(resetEditRecipeValues());
                             navigate('/');
                         }}>Logout</span>
                     </>

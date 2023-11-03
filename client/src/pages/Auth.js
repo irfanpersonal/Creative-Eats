@@ -18,6 +18,7 @@ const Auth = () => {
         event.preventDefault();
         if (input.wantsToRegister) {
             dispatch(registerUser(input));
+            return;
         }
         dispatch(loginUser({email: input.email, password: input.password}));
     }
