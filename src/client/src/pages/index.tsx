@@ -1,0 +1,12 @@
+export {default as AddRecipe} from './AddRecipe';
+export {default as Auth} from './Auth';
+export {default as Error} from './Error';
+export {default as Home} from './Home';
+export {default as HomeLayout} from './HomeLayout';
+export {default as Profile} from './Profile';
+export {default as ProtectedRoute} from './ProtectedRoute';
+export {default as Recipe} from './Recipe';
+export {default as Recipes} from './Recipes';
+export {default as Search} from './Search';
+export {default as Setting} from './Setting';
+export {default as SingleProfile} from './SingleProfile';
